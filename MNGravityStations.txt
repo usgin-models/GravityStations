@@ -1,0 +1,20 @@
+relateid	GRAV036339
+utme_n83	455473.9558
+utmn_n83	5142958.8003
+lat_dd	46.438733
+long_dd	-93.579631
+field_no	44
+elev_ft	1281
+meter	LR G320
+observer	Hess
+acq_date	19741112
+abs_g	980637.4
+free_air	8.66
+bouguer	-35.5
+main_base	Aitkin
+field_base	
+mgsquad	209A
+quad_name	Glen
+tile_name	q209a
+temp	18989
+shape	Point
