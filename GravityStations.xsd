@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/GravityStation/0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:gmlsf="http://www.opengis.net/gmlsf" targetNamespace="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/GravityStation/0.1" elementFormDefault="qualified" version="1.09">
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
+	<xs:annotation>
+		<!-- This XSD document, including XML schema, indicates the content requested for observations of the acceleration of gravity. Fields in the content model will become XML elements in interchange documents for WFS simple feature in the USGIN system.-->
+		<!--This XSD document was created on 2013-06-04 by Christy Caudill, AZGS.-->
+		<xs:appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
+			<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
+			<gmlsf:GMLProfileSchema>
+http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gmlsf:GMLProfileSchema>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="GravityStation" type="aasg:GravityStationType" substitutionGroup="gml:_Feature"/>
+	<xs:complexType name="GravityStationType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="OBJECTID" type="xs:int" minOccurs="0"/>
+					<xs:element name="ObservationURI">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="ObservationLabel" type="xs:string"/>
+					<xs:element name="Notes" type="xs:string" minOccurs="0"/>
+					<xs:element name="StationName" type="xs:string" minOccurs="0"/>
+					<xs:element name="StationIdentifier" type="xs:string" minOccurs="0"/>
+					<xs:element name="OtherID" type="xs:string" minOccurs="0"/>
+					<xs:element name="County" type="xs:string"/>
+					<xs:element name="State" type="xs:string"/>
+					<xs:element name="LatDegree" type="xs:double"/>
+					<xs:element name="LongDegree" type="xs:double"/>
+					<xs:element name="SRS" type="xs:string"/>
+					<xs:element name="LocationUncertaintyStatement" type="xs:string" minOccurs="0"/>
+					<xs:element name="Elevation_m" type="xs:double" minOccurs="0"/>
+					<xs:element name="VerticalDatum" type="xs:double" minOccurs="0"/>
+					<xs:element name="ObservationDate" type="xs:date"/>
+					<xs:element name="ObservedGravity_mgal" type="xs:double"/>
+					<xs:element name="CompleteBouguerValue_mgal" type="xs:double"/>
+					<xs:element name="LatitudeCorrection_mgal" type="xs:double" minOccurs="0"/>
+					<xs:element name="FreeAirCorrection_mgal" type="xs:double" minOccurs="0"/>
+					<xs:element name="BouguerCorrection_mgal" type="xs:double" minOccurs="0"/>
+					<xs:element name="TerrainCorrection_mgal" type="xs:double" minOccurs="0"/>
+					<xs:element name="IsostaticCorrection_mgal" type="xs:double" minOccurs="0"/>
+					<xs:element name="Uncertainty_mgal" type="xs:double"/>
+					<xs:element name="Procedure" type="xs:string"/>
+					<xs:element name="Instrument" type="xs:string" minOccurs="0"/>
+					<xs:element name="Observer" type="xs:string" minOccurs="0"/>
+					<xs:element name="BaseStation" type="xs:string" minOccurs="0"/>
+					<xs:element name="RelatedResource" type="xs:string" minOccurs="0"/>
+					<xs:element name="MetadataURI" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="Source" type="xs:double"/>
+					<xs:element name="Shape" type="gml:PointPropertyType"/>
+					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
